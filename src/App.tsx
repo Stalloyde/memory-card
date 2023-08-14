@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Card from './components/card';
-import uniqid from 'uniqid';
+import * as uniqid from 'uniqid';
 import './App.css';
 import obiWanKenobi from './Images/obiWanKenobi.jpeg';
 import aaylaSecura from './Images/aaylaSecura.webp';
