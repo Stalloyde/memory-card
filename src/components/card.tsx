@@ -1,6 +1,23 @@
 import './card.css';
+import { characterCardsType } from '../App';
+import * as React from 'react';
 
-const Card = ({
+interface CardInputProps {
+  currentScore: number;
+  setCurrentScore: React.Dispatch<React.SetStateAction<number>>;
+  highScore: number;
+  setHighScore: React.Dispatch<React.SetStateAction<number>>;
+  setIsGameOver: React.Dispatch<React.SetStateAction<boolean>>;
+  characterCards: characterCardsType[] | Record<any, never>[];
+  setCharacterCards: React.Dispatch<
+    React.SetStateAction<Record<any, never>[] | characterCardsType[]>
+  >;
+  id: any;
+  cardName: string;
+  imageUrl: string;
+}
+
+const Card: React.FC<CardInputProps> = ({
   currentScore,
   setCurrentScore,
   highScore,
@@ -21,10 +38,10 @@ const Card = ({
   };
 
   const gameOver = () => {
-    setIsGameOver(1);
+    setIsGameOver(true);
   };
 
-  const handleClick = (e) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const currentTarget = e.currentTarget.id;
 
     const updatedCharacterCards = characterCards.map((item) =>
@@ -55,12 +72,12 @@ const Card = ({
   };
 
   return (
-    <div className='card' onClick={handleClick} id={id}>
+    <article className='card' onClick={handleClick} id={id}>
       <>
         <img className='images' src={imageUrl} alt={`image-${id}`}></img>
       </>
       <p>{cardName}</p>
-    </div>
+    </article>
   );
 };
 

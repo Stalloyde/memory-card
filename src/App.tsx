@@ -15,14 +15,14 @@ import quiGonJinn from './Images/quiGonJinn.png';
 import rey from './Images/rey.webp';
 import emperorPalpatine from './Images/emperorPalpatine.png';
 
-const App = () => {
-  interface characterCardsType {
-    name: string;
-    id: any;
-    isClick: boolean;
-    imageUrl: string;
-  }
+export interface characterCardsType {
+  name: string;
+  id: any;
+  isClick: boolean;
+  imageUrl: string;
+}
 
+const App = () => {
   const [currentScore, setCurrentScore] = useState<number>(0);
   const [highScore, setHighScore] = useState<number>(0);
   const [isGameOver, setIsGameOver] = useState<boolean>(false);
