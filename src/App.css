@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: x-large;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 0.1fr 1fr;
+}
+
+.header-container {
+  background-color: rgb(16, 1, 100);
+  display: flex;
+  border-bottom: 1px solid black;
+  align-items: center;
+  color: gold;
+}
+
+.header-container > div {
+  padding: 10px;
+}
+
+.title {
+  flex-grow: 0.8;
+}
+
+.title > h1,
+.title > p {
+  padding: 10px;
+}
+
+.scoreboard {
+  flex-grow: 0.2;
+}
+
+.scoreboard > div {
+  padding: 10px;
+}
+
+.content-container {
+  position: relative;
+  background-color: black;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  text-align: center;
+  background-image: url('./Images/space.png'); /*https://wallpapersafari.com/w/Avc0xl#google_vignette*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.win-modal,
+.gameover-modal {
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  background-image: url('./Images/space.png'); /*https://wallpapersafari.com/w/Avc0xl#google_vignette*/
+
+  color: gold;
+  font-size: xx-large;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  padding: 10px;
+}
+
+button {
+  outline: 1px solid;
+  width: 300px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: rgb(16, 1, 100);
+  color: gold;
+  font-size: xx-large;
+}
+
+button:hover {
+  cursor: pointer;
+  outline: 1px solid gold;
+  transform: scale(1.03);
+  transition: all 0.2s;
+}
