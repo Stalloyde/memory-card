@@ -156,34 +156,34 @@ const App = () => {
 
   return (
     <div className='container'>
-      <div className='header-container'>
-        <div className='title'>
+      <header className='header-container'>
+        <section className='title'>
           <h1>Star Wars Memory Game</h1>
           <p>
             Get points for picking cards that you haven't picked before. Get 12
             points to win!
           </p>
-        </div>
-        <div className='scoreboard'>
+        </section>
+        <section className='scoreboard'>
           <div>Current Score: {currentScore}</div>
           <div>High Score: {highScore}</div>
-        </div>
-      </div>
+        </section>
+      </header>
 
-      <div className='content-container'>
+      <main className='content-container'>
         {isWin ? (
           <>
-            <div className='win-modal'>
+            <dialog className='win-modal'>
               <h2>You win!</h2>
               <button onClick={handleClick}>New Game</button>
-            </div>
+            </dialog>
           </>
         ) : isGameOver ? (
           <>
-            <div className='gameover-modal'>
+            <dialog className='gameover-modal'>
               <h2>Try Again!</h2>
               <button onClick={handleClick}>New Game</button>
-            </div>
+            </dialog>
           </>
         ) : (
           <>
@@ -204,7 +204,7 @@ const App = () => {
             ))}
           </>
         )}
-      </div>
+      </main>
     </div>
   );
 };
