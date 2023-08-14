@@ -65,7 +65,7 @@ body {
   position: absolute;
   z-index: 1;
   background-image: url('./Images/space.png'); /*https://wallpapersafari.com/w/Avc0xl#google_vignette*/
-
+  border: none;
   color: gold;
   font-size: xx-large;
   width: 100%;
