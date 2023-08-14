@@ -10,7 +10,10 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
+    "paths": {
+      "@vitejs/plugin-react": ["./node_modules/@vitejs/plugin-react"]
+    },
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
