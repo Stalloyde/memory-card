@@ -16,11 +16,20 @@ import rey from './Images/rey.webp';
 import emperorPalpatine from './Images/emperorPalpatine.png';
 
 const App = () => {
-  const [currentScore, setCurrentScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
-  const [isGameOver, setIsGameOver] = useState(0);
-  const [isWin, setIsWin] = useState(0);
-  const [characterCards, setCharacterCards] = useState([
+  interface characterCardsType {
+    name: string;
+    id: any;
+    isClick: boolean;
+    imageUrl: string;
+  }
+
+  const [currentScore, setCurrentScore] = useState<number>(0);
+  const [highScore, setHighScore] = useState<number>(0);
+  const [isGameOver, setIsGameOver] = useState<boolean>(false);
+  const [isWin, setIsWin] = useState<boolean>(false);
+  const [characterCards, setCharacterCards] = useState<
+    characterCardsType[] | Record<any, never>[]
+  >([
     {
       name: 'Obi Wan Kenobi',
       id: uniqid(),
@@ -95,7 +104,7 @@ const App = () => {
     },
   ]);
 
-  function shuffle(array) {
+  function shuffle(array: {}[]) {
     let currentIndex = array.length,
       randomIndex;
 
@@ -126,7 +135,7 @@ const App = () => {
   }, [currentScore]);
 
   useEffect(() => {
-    currentScore > 11 ? setIsWin(1) : setIsWin(0);
+    currentScore > 11 ? setIsWin(true) : setIsWin(false);
   }, [currentScore]);
 
   const handleClick = () => {
@@ -140,8 +149,8 @@ const App = () => {
     setCharacterCards(updatedCharacterCards);
     setCurrentScore(0);
     setHighScore(highScore);
-    setIsWin(0);
-    setIsGameOver(0);
+    setIsWin(false);
+    setIsGameOver(false);
     setCurrentScore(0);
   };
 
@@ -187,9 +196,6 @@ const App = () => {
                 setCurrentScore={setCurrentScore}
                 highScore={highScore}
                 setHighScore={setHighScore}
-                isWin={isWin}
-                setIsWin={setIsWin}
-                isGameOver={isGameOver}
                 setIsGameOver={setIsGameOver}
                 characterCards={characterCards}
                 setCharacterCards={setCharacterCards}
